@@ -1,0 +1,7 @@
+{{link-to "New" "new" data-test-button-create-shopping-list=true}}
+
+{{#each model as |shoppingList|}}
+  <div data-test-shopping-list-entry>
+    {{link-to shoppingList.name "shopping-list" shoppingList.id}}
+  </div>
+{{/each}}

@@ -1,0 +1,35 @@
+{{link-to "Go back" "index"}}
+<h1 data-test-shopping-list-name>
+  {{model.name}}
+</h1>
+
+<ol>
+  {{#each model.items as |item index|}}
+    <li data-test-shopping-list-item>
+      <form>
+        <input data-test-shopping-list-check-item={{index}}
+            id="shopping-list-item-{{index}}"
+            type="checkbox"
+            checked={{item.complete}}
+            onclick={{action (mut item.complete) value="target.checked"}}>
+        <label for="shopping-list-item-{{index}}">
+          {{item.name}}
+        </label>
+        <button data-test-shopping-list-delete-item={{index}} {{action "deleteItem" item}}>
+          Remove
+        </button>
+      </form>
+    </li>
+  {{/each}}
+</ol>
+
+<form>
+  <input data-test-shopping-list-new-item
+      id="new-shopping-list-item"
+      value={{newItemName}}
+      oninput={{action (mut newItemName) value="target.value"}}>
+
+  <button data-test-shopping-list-add-item {{action "addItem"}}>
+    Add
+  </button>
+</form>

@@ -1,0 +1,18 @@
+{{link-to "Go back" "index"}}
+<h1>
+  Create a new Shopping List
+</h1>
+
+<form>
+  <label for="new-shopping-list-name">
+    Name
+  </label>
+  <input data-test-new-shopping-list-name
+      id="new-shopping-list-name"
+      value={{newShoppingListName}}
+      oninput={{action (mut newShoppingListName) value="target.value"}}>
+
+  <button data-test-new-shopping-list-create {{action "submit"}}>
+    Create
+  </button>
+</form>
