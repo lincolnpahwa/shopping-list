@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('new');
   this.route('shopping-list', { path: 'shopping-list/:id' });
+  this.route('app-shell');
 });
 
 export default Router;

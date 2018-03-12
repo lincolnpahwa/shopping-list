@@ -8,6 +8,21 @@ module.exports = function(defaults) {
       packages: [
         '@orbit/indexeddb'
       ]
+    },
+
+    'ember-service-worker': {
+      versionStrategy: 'every-build',
+      registrationStrategy: 'inline'
+    },
+
+    'asset-cache': {
+      include: [ 
+        '**/*.js'
+      ],
+      exclude: [
+        '**/*.map',
+        'assets/test*.js'
+      ]
     }
   });
 
